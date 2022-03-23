@@ -2,13 +2,49 @@
   <div class="grain">
     <section id="controls">
       <div id="theme__toggle" class="toggle">
-        <input type="checkbox" name="theme" id="theme">
-        <label for="theme"></label>
+        <input type="checkbox" name="theme-switch" id="theme-switch"
+          v-model="darkMode"
+          @change="toggleDarkMode">
+        <label for="theme-switch"></label>
       </div>
     </section>
     <router-view/>
   </div>
 </template>
+<script>
+export default{
+  data(){
+    return{
+      darkMode: false
+    }
+  },
+  mounted(){
+    let htmlElement = document.documentElement
+    let theme = localStorage.getItem("theme")
+
+    if (theme === 'dark'){
+      htmlElement.setAttribute('theme', 'dark')
+      this.darkMode = true
+    }else {
+      htmlElement.setAttribute('theme', 'light')
+      this.darkMode = false
+    }
+  },
+  watch: {
+    darkMode: function () {
+      let htmlElement = document.documentElement
+
+      if(this.darkMode){
+        localStorage.setItem("theme", 'dark')
+        htmlElement.setAttribute('theme', 'dark')
+      }else{
+        localStorage.setItem("theme", 'light')
+        htmlElement.setAttribute('theme', 'light')
+      }
+    }
+  }
+}
+</script>
 <style lang="scss">
 @font-face {
   font-family: 'Eu Alonira';
@@ -22,11 +58,11 @@
     --font_color: #1A1919;
     --green: #a5a58d;
 }
-[data-theme="light"]{
+[theme="light"]{
     --background: #EEE7E1;
     --font_color: #1A1919;
 }
-[data-theme="dark"]{
+[theme="dark"]{
     --background: #111111;
     --font_color: #EEE7E1;
 }
@@ -39,6 +75,7 @@
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
+  transition: all 300ms;
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -118,6 +155,7 @@ a{
 }
 
 .page{
+  background-color: var(--background);
   margin: 0 10rem;
   font-size: 1.1rem;
   h2{
@@ -125,9 +163,12 @@ a{
     font-size: 6.5rem;
     margin-left: -6rem;
     }
-    hr{
-        margin: 30px;
-    }
+  h4{
+    margin: .5rem 0 .3rem 0;
+  }
+  hr{
+    margin: 30px;
+  }
 }
 
 .grain {
@@ -137,14 +178,13 @@ a{
   width: 99vw;
   z-index: 300;
   user-select: none;
-  transition: all .5s ease-in-out;
   &:before {
     content: "";
     top: -10rem;
     left: -10rem;
     width: calc(100% + 20rem);
     height: calc(100% + 20rem);
-    z-index: 9999;
+    z-index: 2;
     position: fixed;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
     opacity: 0.10;
