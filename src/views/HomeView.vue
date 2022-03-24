@@ -14,7 +14,6 @@
   </section>
 </template>
 <style lang="scss" scoped>
-
 section{
   height: 100vh;
   display: grid;

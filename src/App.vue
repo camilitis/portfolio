@@ -1,14 +1,19 @@
 <template>
-  <div class="grain">
-    <section id="controls">
-      <div id="theme__toggle" class="toggle">
-        <input type="checkbox" name="theme-switch" id="theme-switch"
-          v-model="darkMode"
-          @change="toggleDarkMode">
-        <label for="theme-switch"></label>
-      </div>
-    </section>
-    <router-view/>
+  <div class="wrapper">
+    <div class="grain">
+
+      <section id="controls">
+        <div id="theme__toggle" class="toggle">
+          <input type="checkbox" name="theme-switch" id="theme-switch"
+            v-model="darkMode"
+            @change="toggleDarkMode">
+          <label for="theme-switch"></label>
+        </div>
+      </section>
+
+      <router-view/>
+
+    </div>
   </div>
 </template>
 <script>
@@ -158,6 +163,7 @@ a{
   background-color: var(--background);
   margin: 0 10rem;
   font-size: 1.1rem;
+  padding: 0 0 5rem 0;
   h2{
     font-family: "Eu Alonira";
     font-size: 6.5rem;
@@ -176,6 +182,7 @@ a{
   top: 0;
   left: 0;
   width: 99vw;
+  height: 100vh;
   z-index: 300;
   user-select: none;
   &:before {
@@ -184,7 +191,7 @@ a{
     left: -10rem;
     width: calc(100% + 20rem);
     height: calc(100% + 20rem);
-    z-index: 2;
+    z-index: 999;
     position: fixed;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
     opacity: 0.10;
