@@ -9,7 +9,7 @@
 
 <h2>Work</h2>
 <section class="project">
-  <img src="@/assets/todolist.png">
+  <img style="width:600px"  class="img" src="@/assets/todolist.png">
 
   <span>
     <h4>To Do List</h4>
@@ -22,7 +22,7 @@
 <hr>
 
 <section class="project">
-  <img src="@/assets/wordle.gif">
+  <img class="img" src="@/assets/wordle.gif">
 
   <span>
     <h4>Argentinian Wordle</h4>
@@ -35,7 +35,7 @@
 <hr>
 
 <section class="project">
-  <img src="@/assets/deaca.gif">
+  <img class="img" src="@/assets/deaca.gif">
 
   <span>
     <h4>De Acá Juego - DemoVersion</h4>
@@ -46,13 +46,15 @@
 </section>
 </div>
 </template>
-<style scoped>
+<style scoped lang="scss">
 .project{
   display: grid;
   grid-template-areas:
     "gif about";
   align-self: center;
 }
-img{grid-area: gif;}
+.img{
+  grid-area: gif;
+}
 span{grid-area: about;}
 </style>
