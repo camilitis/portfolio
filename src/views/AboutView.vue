@@ -25,7 +25,7 @@
         <li>Bootstrap</li>
         <li>SASS</li>
         <li>Vue.js</li>
-        <li>React - recently started</li>
+        <li>Firebase</li>
       </ul>
       <ul>
         <li>Git</li>

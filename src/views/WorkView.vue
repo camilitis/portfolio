@@ -9,6 +9,19 @@
 
 <h2>Work</h2>
 <section class="project">
+  <img src="@/assets/todolist.png">
+
+  <span>
+    <h4>To Do List</h4>
+      <p>A task manager to organize work and life.</p>
+      <h5>HTML, CSS & Vue.js - Firebase Authentication - Firebase realtime database</h5>
+      <p><a href="https://firebase-project-alpha.vercel.app/">View it</a> | <a href="https://github.com/camilitis/firebase-project">View Github repo</a></p>
+  </span>
+</section>
+
+<hr>
+
+<section class="project">
   <img src="@/assets/wordle.gif">
 
   <span>
@@ -16,19 +29,6 @@
       <p>Wordle clone based on argentinian culture.</p>
       <h5>HTML, CSS & Vue.js | LocalStorage</h5>
       <p><a href="https://wordleargento.vercel.app/">View it</a> | <a href="https://github.com/camilitis/wordle-argentino">View Github repo</a></p>
-  </span>
-</section>
-
-<hr>
-
-<section class="project">
-  <img src="@/assets/todolist.gif">
-
-  <span>
-    <h4>To Do List</h4>
-      <p>A task manager to organize work and life.</p>
-      <h5>HTML, CSS & Vue.js | LocalStorage</h5>
-      <p><a href="https://todolist-two-roan.vercel.app/">View it</a> | <a href="https://github.com/camilitis/todolist">View Github repo</a></p>
   </span>
 </section>
 
